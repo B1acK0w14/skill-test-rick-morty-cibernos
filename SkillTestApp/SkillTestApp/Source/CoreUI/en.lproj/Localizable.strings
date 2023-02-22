@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  SkillTestApp
+
+  Created by David Penagos on 21/02/23.
+  
+*/
+
+// API Service Strings
+"Base_URL" = "https://rickandmortyapi.com/api";

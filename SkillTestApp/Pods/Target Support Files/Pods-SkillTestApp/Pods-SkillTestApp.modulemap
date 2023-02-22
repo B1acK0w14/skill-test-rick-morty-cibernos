@@ -1,0 +1,6 @@
+module Pods_SkillTestApp {
+  umbrella header "Pods-SkillTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

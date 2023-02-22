@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+def general_pods
+  pod 'SwiftGen'
+end
+
+target 'SkillTestApp' do
+  # Pods for CoreImageFilter
+  general_pods
+  pod 'Alamofire'
+end
