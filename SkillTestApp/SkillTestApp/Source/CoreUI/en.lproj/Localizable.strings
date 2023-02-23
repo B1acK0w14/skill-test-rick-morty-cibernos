@@ -7,4 +7,10 @@
 */
 
 // API Service Strings
-"Base_URL" = "https://rickandmortyapi.com/api";
+"Base_URL" = "https://rickandmortyapi.com/api/";
+
+// Error Message
+"Error.invalid_url" = "Invalid URL";
+
+// URL Endpoint
+"URL_Endpoint.all_characters" = "character";

@@ -5,3 +5,12 @@
   Created by David Penagos on 21/02/23.
   
 */
+
+// API Service Strings 
+"Base_URL" = "https://rickandmortyapi.com/api/";
+
+// Error Message
+"Error.invalid_url" = "URL invalido";
+
+// URL Endpoint
+"URL_Endpoint.all_characters" = "character";
