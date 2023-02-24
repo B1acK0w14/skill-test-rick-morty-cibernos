@@ -11,6 +11,7 @@
 
 // Error Message
 "Error.invalid_url" = "Invalid URL";
+"Error.general_error" = "Error";
 
 // URL Endpoint
 "URL_Endpoint.all_characters" = "character";

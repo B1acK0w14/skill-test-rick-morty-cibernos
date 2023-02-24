@@ -11,6 +11,7 @@
 
 // Error Message
 "Error.invalid_url" = "URL inválido";
+"Error.general_error" = "Error";
 
 // URL Endpoint
 "URL_Endpoint.all_characters" = "character";
@@ -23,8 +24,8 @@
 // CharacterCell
 "Character_Cell.last_know_location" = "Última localización conocida:";
 "Character_Cell.gender" = "Genero:";
-"Character_Cell.Status.alive" = "Vivo";
-"Character_Cell.Status.dead" = "Muerto";
+"Character_Cell.Status.alive" = "Alive";
+"Character_Cell.Status.dead" = "Dead";
 
 // SearchView
 "Search_View.search_icon" = "Buscar";

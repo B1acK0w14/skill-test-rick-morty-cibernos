@@ -14,10 +14,28 @@ struct CharacterCell: View {
     var body: some View {
         ZStack {
             HStack {
-                Image(systemName: "magnifyingglass")
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .padding([.leading], 16)
-                    .scaledToFit()
+                if characterResult.image != nil {
+                    AsyncImage(url: URL(string: characterResult.image!)) { phase in
+                        if let image = phase.image {
+                            image.resizable()
+                                .scaledToFill()
+                                .frame(width: 120, height: 120, alignment: .center)
+                                .clipped()
+                                .padding([.leading], 16)
+                            
+                        } else if phase.error != nil {
+                            Text(phase.error?.localizedDescription ?? L10n.Error.generalError)
+                                .foregroundColor(Color.pink)
+                                .frame(width: 120, height: 120, alignment: .center)
+                        } else {
+                            ProgressView()
+                                .frame(width: 120, height: 120, alignment: .center)
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
+                
+                Spacer()
                 
                 VStack {
                     VStack(spacing: 0) {
@@ -96,3 +114,9 @@ struct CharacterCell: View {
         }
     }
 }
+
+//struct CharacterCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CharacterCell()
+//    }
+//}

@@ -28,6 +28,8 @@ public enum L10n {
     }
   }
   public enum Error {
+    /// Error
+    public static let generalError = L10n.tr("Localizable", "Error.general_error", fallback: "Error")
     /// Invalid URL
     public static let invalidUrl = L10n.tr("Localizable", "Error.invalid_url", fallback: "Invalid URL")
   }

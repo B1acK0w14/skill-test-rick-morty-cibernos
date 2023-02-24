@@ -48,6 +48,9 @@ struct HomeView: View {
                             .opacity(viewModel.isHiddenButton(typeButton: .previous) ? 0 : 1)
                             .disabled(viewModel.isHiddenButton(typeButton: .previous))
                             .buttonStyle(.bordered)
+                            .padding([.leading], 20)
+                            
+                            Spacer()
                             
                             /// Next Button
                             Button {
