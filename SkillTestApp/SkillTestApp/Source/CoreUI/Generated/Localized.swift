@@ -25,6 +25,8 @@ public enum L10n {
       public static let alive = L10n.tr("Localizable", "Character_Cell.Status.alive", fallback: "Alive")
       /// Dead
       public static let dead = L10n.tr("Localizable", "Character_Cell.Status.dead", fallback: "Dead")
+      /// Unknown
+      public static let unknown = L10n.tr("Localizable", "Character_Cell.Status.unknown", fallback: "Unknown")
     }
   }
   public enum Error {
@@ -32,6 +34,26 @@ public enum L10n {
     public static let generalError = L10n.tr("Localizable", "Error.general_error", fallback: "Error")
     /// Invalid URL
     public static let invalidUrl = L10n.tr("Localizable", "Error.invalid_url", fallback: "Invalid URL")
+  }
+  public enum FilterView {
+    public enum GenderMenu {
+      /// Female
+      public static let female = L10n.tr("Localizable", "Filter_View.Gender_Menu.female", fallback: "Female")
+      /// Genderless
+      public static let genderless = L10n.tr("Localizable", "Filter_View.Gender_Menu.genderless", fallback: "Genderless")
+      /// Male
+      public static let male = L10n.tr("Localizable", "Filter_View.Gender_Menu.male", fallback: "Male")
+      /// Unknown
+      public static let unknown = L10n.tr("Localizable", "Filter_View.Gender_Menu.unknown", fallback: "Unknown")
+    }
+    public enum Search {
+      /// Search
+      public static let searchIcon = L10n.tr("Localizable", "Filter_View.Search.search_icon", fallback: "Search")
+      /// Search
+      public static let searchText = L10n.tr("Localizable", "Filter_View.Search.search_text", fallback: "Search")
+      /// Search any character
+      public static let searchTextfieldPlaceholder = L10n.tr("Localizable", "Filter_View.Search.search_textfield_placeholder", fallback: "Search any character")
+    }
   }
   public enum HomeView {
     /// Home
@@ -41,13 +63,9 @@ public enum L10n {
     /// Prev Page
     public static let previusPageButton = L10n.tr("Localizable", "Home_View.previus_page_button", fallback: "Prev Page")
   }
-  public enum SearchView {
-    /// Search
-    public static let searchIcon = L10n.tr("Localizable", "Search_View.search_icon", fallback: "Search")
-  }
   public enum URLEndpoint {
-    /// character
-    public static let allCharacters = L10n.tr("Localizable", "URL_Endpoint.all_characters", fallback: "character")
+    /// character/
+    public static let allCharacters = L10n.tr("Localizable", "URL_Endpoint.all_characters", fallback: "character/")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

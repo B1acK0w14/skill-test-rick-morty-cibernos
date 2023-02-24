@@ -27,6 +27,9 @@
 		E5D7448F29A7D27E00E6EA22 /* LoadableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7448E29A7D27E00E6EA22 /* LoadableObject.swift */; };
 		E5D7449529A7E59700E6EA22 /* TypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7449429A7E59700E6EA22 /* TypeButton.swift */; };
 		E5D7449C29A82E5700E6EA22 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7449B29A82E5700E6EA22 /* CharacterCell.swift */; };
+		E5DA913329A9195E0010500C /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA913229A9195E0010500C /* CharacterView.swift */; };
+		E5DA913729A933DA0010500C /* GenderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA913629A933DA0010500C /* GenderEnum.swift */; };
+		E5DA913A29A9370C0010500C /* StatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA913929A9370C0010500C /* StatusEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		E5D7448E29A7D27E00E6EA22 /* LoadableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableObject.swift; sourceTree = "<group>"; };
 		E5D7449429A7E59700E6EA22 /* TypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButton.swift; sourceTree = "<group>"; };
 		E5D7449B29A82E5700E6EA22 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		E5DA913229A9195E0010500C /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		E5DA913629A933DA0010500C /* GenderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderEnum.swift; sourceTree = "<group>"; };
+		E5DA913929A9370C0010500C /* StatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +126,7 @@
 		E52E1C9629A3E974005EE3E6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7449A29A82E3700E6EA22 /* Cell */,
+				E5D7449A29A82E3700E6EA22 /* CharacterView */,
 				E5002BF229A6867D0099557A /* HomeView.swift */,
 				E5002BF429A6868E0099557A /* HomeViewModel.swift */,
 				E5AADAF629A6903B00040EAA /* HomeModel.swift */,
@@ -183,6 +189,8 @@
 				E5D7448B29A7D1E800E6EA22 /* LoadingStates.swift */,
 				E5D7448829A7A45F00E6EA22 /* TraccarEndpoint.swift */,
 				E5D7449429A7E59700E6EA22 /* TypeButton.swift */,
+				E5DA913629A933DA0010500C /* GenderEnum.swift */,
+				E5DA913929A9370C0010500C /* StatusEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -195,12 +203,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		E5D7449A29A82E3700E6EA22 /* Cell */ = {
+		E5D7449A29A82E3700E6EA22 /* CharacterView */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA913229A9195E0010500C /* CharacterView.swift */,
 				E5D7449B29A82E5700E6EA22 /* CharacterCell.swift */,
 			);
-			path = Cell;
+			path = CharacterView;
 			sourceTree = "<group>";
 		};
 		EA36877DDC185FC7051A2911 /* Frameworks */ = {
@@ -332,8 +341,10 @@
 				E5D7448929A7A45F00E6EA22 /* TraccarEndpoint.swift in Sources */,
 				E52E1C9C29A3FCC8005EE3E6 /* SplashViewModel.swift in Sources */,
 				E5042DB929A698F700FDEC78 /* APIManager.swift in Sources */,
+				E5DA913329A9195E0010500C /* CharacterView.swift in Sources */,
 				E5002BEF29A67FFA0099557A /* Localized.swift in Sources */,
 				E5042DBB29A6A01E00FDEC78 /* APIService.swift in Sources */,
+				E5DA913729A933DA0010500C /* GenderEnum.swift in Sources */,
 				E5002BF529A6868E0099557A /* HomeViewModel.swift in Sources */,
 				E52E1C8B29A3BEAE005EE3E6 /* SplashView.swift in Sources */,
 				E5D7449529A7E59700E6EA22 /* TypeButton.swift in Sources */,
@@ -341,6 +352,7 @@
 				E52E1C8929A3BEAE005EE3E6 /* SkillTestApp.swift in Sources */,
 				E5D7449C29A82E5700E6EA22 /* CharacterCell.swift in Sources */,
 				E5D7448F29A7D27E00E6EA22 /* LoadableObject.swift in Sources */,
+				E5DA913A29A9370C0010500C /* StatusEnum.swift in Sources */,
 				E5AADAF729A6903B00040EAA /* HomeModel.swift in Sources */,
 				E5D7448C29A7D1E800E6EA22 /* LoadingStates.swift in Sources */,
 				E5002BF129A6856D0099557A /* Assets-Constants.swift in Sources */,

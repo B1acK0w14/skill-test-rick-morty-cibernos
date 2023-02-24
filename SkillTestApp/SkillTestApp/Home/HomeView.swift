@@ -13,6 +13,8 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     
     @State private var searchText = String.emptyString
+    @State private var genderSelection: Int = 0
+    @State private var statusSelection: Int = 0
     
     var body: some View {
         ZStack {
@@ -26,80 +28,84 @@ struct HomeView: View {
                 case .failed(let error):
                     Text("\(error)")
                 case .loaded:
-                    VStack {
-                        ScrollView {
-                            LazyVStack(spacing: 20) {
-                                ForEach(viewModel.charactersResult) { character in
-                                    CharacterCell(characterResult: character)
-                                }
-                            }
-                            .background(Color(Asset.grayTableHome.color))
-                        }
-                        .padding([.top], 1)
-                        .padding([.bottom], 18)
-                        
-                        HStack {
-                            /// Previous Button
-                            Button {
-                                viewModel.followingPages(typeButton: .previous)
-                            } label: {
-                                Text(L10n.HomeView.previusPageButton)
-                            }
-                            .opacity(viewModel.isHiddenButton(typeButton: .previous) ? 0 : 1)
-                            .disabled(viewModel.isHiddenButton(typeButton: .previous))
-                            .buttonStyle(.bordered)
-                            .padding([.leading], 20)
-                            
-                            Spacer()
-                            
-                            /// Next Button
-                            Button {
-                                viewModel.followingPages(typeButton: .next)
-                            } label: {
-                                Text(L10n.HomeView.nextPageButton)
-                            }
-                            .opacity(viewModel.isHiddenButton(typeButton: .next) ? 0 : 1)
-                            .disabled(viewModel.isHiddenButton(typeButton: .next))
-                            .padding([.trailing], 20)
-                            .buttonStyle(.bordered)
-                        }
-                        .frame(alignment: .center)
-                        .padding([.bottom], 24)
-                    }
+                    /// Character view with own cell
+                    CharacterView(viewModel: viewModel,
+                                  typeOfResult: viewModel.charactersResult)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text(L10n.HomeView.homeIcon)
                     }
-                }
-                
-                // TODO: - Put here the second screen for search
-                NavigationStack {
-                    List {
-                        ForEach(searchResults, id: \.self) { character in
-                            // TODO: - Redirect this to a detail page
-                            NavigationLink {
-                                Text(character)
-                            } label: {
-                                Text(character)
+                    
+                    VStack(spacing: 15) {
+                        /// Search Field
+                        TextField(L10n.FilterView.Search.searchTextfieldPlaceholder, text: $searchText)
+                            .textFieldStyle(.roundedBorder)
+                            .padding([.leading, .trailing], 16)
+                            .onSubmit {
+                                viewModel.searchFunction(searchText: searchText,
+                                                         genderOption: GenderEnum(rawValue: genderSelection),
+                                                         statusSelection: StatusEnum(rawValue: statusSelection))
                             }
+                        
+                        HStack(spacing: 20) {
+                            /// Gender Menu
+                            Picker(String.emptyString, selection: $genderSelection) {
+                                Text(L10n.FilterView.GenderMenu.female).tag(0)
+                                    .minimumScaleFactor(0.1)
+                                Text(L10n.FilterView.GenderMenu.male).tag(1)
+                                    .minimumScaleFactor(0.1)
+                                Text(L10n.FilterView.GenderMenu.genderless).tag(2)
+                                    .lineLimit(1)
+                                Text(L10n.FilterView.GenderMenu.unknown).tag(3)
+                                    .lineLimit(1)
+                            }
+                            .pickerStyle(.menu)
+                            .colorMultiply(.red)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(.red, lineWidth: 1)
+                            )
+                            .minimumScaleFactor(0.1)
+                            
+                            /// Status Menu
+                            Picker(String.emptyString, selection: $statusSelection) {
+                                Text(L10n.CharacterCell.Status.dead).tag(0)
+                                    .minimumScaleFactor(0.1)
+                                Text(L10n.CharacterCell.Status.alive).tag(1)
+                                    .minimumScaleFactor(0.1)
+                                Text(L10n.CharacterCell.Status.unknown).tag(2)
+                                    .lineLimit(1)
+                            }
+                            .pickerStyle(.menu)
+                            .colorMultiply(.red)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(.red, lineWidth: 1)
+                            )
+                            
+                            Button {
+                                viewModel.searchFunction(searchText: searchText,
+                                                         genderOption: GenderEnum(rawValue: genderSelection),
+                                                         statusSelection: StatusEnum(rawValue: statusSelection))
+                            } label: {
+                                Text(L10n.FilterView.Search.searchText)
+                            }
+                            
                         }
+                        
+                        Spacer()
+                        
+                        CharacterView(viewModel: viewModel,
+                                      typeOfResult: viewModel.charactersFilter,
+                                      requestedFromSearch: true)
                     }
-                }
-                .searchable(text: $searchText)
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text(L10n.SearchView.searchIcon)
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text(L10n.FilterView.Search.searchIcon)
+                    }
                 }
             }
             .accentColor(.red)
-        }
-    }
-    
-    var searchResults: [String] {
-        if searchText.isEmpty {
-            return []
-        } else {
-            return viewModel.charactersFilter.filter { $0.contains(searchText) }
         }
     }
 }

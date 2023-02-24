@@ -14,7 +14,7 @@
 "Error.general_error" = "Error";
 
 // URL Endpoint
-"URL_Endpoint.all_characters" = "character";
+"URL_Endpoint.all_characters" = "character/";
 
 // HomeView
 "Home_View.next_page_button" = "Siguiente Página";
@@ -24,8 +24,15 @@
 // CharacterCell
 "Character_Cell.last_know_location" = "Última localización conocida:";
 "Character_Cell.gender" = "Genero:";
-"Character_Cell.Status.alive" = "Alive";
-"Character_Cell.Status.dead" = "Dead";
+"Character_Cell.Status.alive" = "Vivo";
+"Character_Cell.Status.dead" = "Muerto";
+"Character_Cell.Status.unknown" = "Desconocido";
 
-// SearchView
-"Search_View.search_icon" = "Buscar";
+// FilterView
+"Filter_View.Search.search_icon" = "Search";
+"Filter_View.Search.search_textfield_placeholder" = "Busca cualquier personaje";
+"Filter_View.Search.search_text" = "Buscar";
+"Filter_View.Gender_Menu.male" = "Hombre";
+"Filter_View.Gender_Menu.female" = "Mujer";
+"Filter_View.Gender_Menu.genderless" = "Sin género";
+"Filter_View.Gender_Menu.unknown" = "Desconocido";

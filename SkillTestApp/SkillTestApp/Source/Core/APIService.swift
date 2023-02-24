@@ -14,16 +14,25 @@ struct APIServices {
     
     // MARK: - Functions
     func callGetAllCharacters(followingPageURL: String,
-                              parameters: Parameters? = nil,
+                              parametersToSend: Parameters? = nil,
                               success: @escaping (_ result: AllCharactersModel?) -> Void,
                               failure: @escaping (_ failureMsg: FailureMessage) -> Void) {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/json"
+        
+        var url = (followingPageURL.isEmpty) ? TraccarEndpoint.allCharacters.url.absoluteString : followingPageURL
+        var components = URLComponents(string: url)!
+        
+        if let arrayParams = parametersToSend {
+            components.queryItems = arrayParams.map { (key, value) in
+                URLQueryItem(name: key, value: value as? String)
+            }
+            components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        }
 
-        APIManager.shared.callAPI(serverURL: (followingPageURL.isEmpty) ? TraccarEndpoint.allCharacters.url.absoluteString : followingPageURL,
+        APIManager.shared.callAPI(serverURL: components.string ?? String.emptyString,
                                   method: .get,
                                   headers: headers,
-                                  parameters: parameters,
                                   success: { response in
             do {
                 if let data = response.data {

@@ -51,7 +51,7 @@ struct CharacterCell: View {
                             /// Alive, dead or unknown - icon
                             Circle()
                                 .frame(width: 9, height: 9, alignment: .center)
-                                .foregroundColor(((characterResult.status ?? String.emptyString) == L10n.CharacterCell.Status.dead) ? Color.red : ((characterResult.status ?? String.emptyString) == L10n.CharacterCell.Status.alive) ? Color.green : Color.gray)
+                                .foregroundColor(((characterResult.status ?? String.emptyString) == "Dead") ? Color.red : ((characterResult.status ?? String.emptyString) == "Alive") ? Color.green : Color.gray)
                                 .scaledToFit()
                             
                             /// Alive, dead or unknown - Text

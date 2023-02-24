@@ -14,7 +14,7 @@
 "Error.general_error" = "Error";
 
 // URL Endpoint
-"URL_Endpoint.all_characters" = "character";
+"URL_Endpoint.all_characters" = "character/";
 
 // HomeView
 "Home_View.next_page_button" = "Next Page";
@@ -26,6 +26,13 @@
 "Character_Cell.gender" = "Gender:";
 "Character_Cell.Status.alive" = "Alive";
 "Character_Cell.Status.dead" = "Dead";
+"Character_Cell.Status.unknown" = "Unknown";
 
-// SearchView
-"Search_View.search_icon" = "Search";
+// FilterView
+"Filter_View.Search.search_icon" = "Search";
+"Filter_View.Search.search_textfield_placeholder" = "Search any character";
+"Filter_View.Search.search_text" = "Search";
+"Filter_View.Gender_Menu.male" = "Male";
+"Filter_View.Gender_Menu.female" = "Female";
+"Filter_View.Gender_Menu.genderless" = "Genderless";
+"Filter_View.Gender_Menu.unknown" = "Unknown";
