@@ -15,9 +15,33 @@ public enum L10n {
   /// 
   ///   Created by David Penagos on 21/02/23.
   public static let baseURL = L10n.tr("Localizable", "Base_URL", fallback: "https://rickandmortyapi.com/api/")
+  public enum CharacterCell {
+    /// Gender:
+    public static let gender = L10n.tr("Localizable", "Character_Cell.gender", fallback: "Gender:")
+    /// Last known location:
+    public static let lastKnowLocation = L10n.tr("Localizable", "Character_Cell.last_know_location", fallback: "Last known location:")
+    public enum Status {
+      /// Alive
+      public static let alive = L10n.tr("Localizable", "Character_Cell.Status.alive", fallback: "Alive")
+      /// Dead
+      public static let dead = L10n.tr("Localizable", "Character_Cell.Status.dead", fallback: "Dead")
+    }
+  }
   public enum Error {
     /// Invalid URL
     public static let invalidUrl = L10n.tr("Localizable", "Error.invalid_url", fallback: "Invalid URL")
+  }
+  public enum HomeView {
+    /// Home
+    public static let homeIcon = L10n.tr("Localizable", "Home_View.home_icon", fallback: "Home")
+    /// Next Page
+    public static let nextPageButton = L10n.tr("Localizable", "Home_View.next_page_button", fallback: "Next Page")
+    /// Prev Page
+    public static let previusPageButton = L10n.tr("Localizable", "Home_View.previus_page_button", fallback: "Prev Page")
+  }
+  public enum SearchView {
+    /// Search
+    public static let searchIcon = L10n.tr("Localizable", "Search_View.search_icon", fallback: "Search")
   }
   public enum URLEndpoint {
     /// character

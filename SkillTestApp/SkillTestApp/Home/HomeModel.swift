@@ -45,7 +45,7 @@ struct Info : Codable {
     }
 }
 
-struct Results : Codable {
+struct Results : Codable, Identifiable {
     let id : Int?
     let name : String?
     let status : String?

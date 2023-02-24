@@ -10,7 +10,21 @@
 "Base_URL" = "https://rickandmortyapi.com/api/";
 
 // Error Message
-"Error.invalid_url" = "URL invalido";
+"Error.invalid_url" = "URL inválido";
 
 // URL Endpoint
 "URL_Endpoint.all_characters" = "character";
+
+// HomeView
+"Home_View.next_page_button" = "Siguiente Página";
+"Home_View.previus_page_button" = "Anterior Página";
+"Home_View.home_icon" = "Home";
+
+// CharacterCell
+"Character_Cell.last_know_location" = "Última localización conocida:";
+"Character_Cell.gender" = "Genero:";
+"Character_Cell.Status.alive" = "Vivo";
+"Character_Cell.Status.dead" = "Muerto";
+
+// SearchView
+"Search_View.search_icon" = "Buscar";

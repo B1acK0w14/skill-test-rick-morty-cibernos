@@ -14,3 +14,17 @@
 
 // URL Endpoint
 "URL_Endpoint.all_characters" = "character";
+
+// HomeView
+"Home_View.next_page_button" = "Next Page";
+"Home_View.previus_page_button" = "Prev Page";
+"Home_View.home_icon" = "Home";
+
+// CharacterCell
+"Character_Cell.last_know_location" = "Last known location:";
+"Character_Cell.gender" = "Gender:";
+"Character_Cell.Status.alive" = "Alive";
+"Character_Cell.Status.dead" = "Dead";
+
+// SearchView
+"Search_View.search_icon" = "Search";

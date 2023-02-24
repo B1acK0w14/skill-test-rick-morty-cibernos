@@ -13,14 +13,17 @@ struct APIServices {
     public static let shared = APIServices()
     
     // MARK: - Functions
-    func callGetAllCharacters(success: @escaping (_ result: AllCharactersModel?) -> Void,
+    func callGetAllCharacters(followingPageURL: String,
+                              parameters: Parameters? = nil,
+                              success: @escaping (_ result: AllCharactersModel?) -> Void,
                               failure: @escaping (_ failureMsg: FailureMessage) -> Void) {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/json"
 
-        APIManager.shared.callAPI(serverURL: TraccarEndpoint.allCharacters.url.absoluteString,
+        APIManager.shared.callAPI(serverURL: (followingPageURL.isEmpty) ? TraccarEndpoint.allCharacters.url.absoluteString : followingPageURL,
                                   method: .get,
                                   headers: headers,
+                                  parameters: parameters,
                                   success: { response in
             do {
                 if let data = response.data {
